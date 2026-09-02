@@ -55,13 +55,14 @@ module bcd_to_7seg_tb;
   begin
     bcd = 0;
     errors = 0;
+
     // apply all possible values, then check the outputs
     for (value = 0; value < 16; value = value + 1)
     begin
       bcd = value;
-      #10;
       expected_on = expected_pattern(bcd);
       expected_segments = COMMON_ANODE ? ~expected_on : expected_on;
+      #10;
 
       if (actual_segments !== expected_segments)
       begin

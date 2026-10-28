@@ -1,3 +1,5 @@
+// Digital Clock
+
 module digital_clock(
     input wire clk,
     input wire btnC,
